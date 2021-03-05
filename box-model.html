@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Box model</title>
+  </head>
+  <style>
+    body {
+      font-size: 1.5em;
+    }
+    .box {
+      background-color: blue;
+      padding: 100px;
+      margin: 70px;
+      border: 30px solid red;
+
+      color: white;
+    }
+  </style>
+  <body>
+    <h1>Box model example</h1>
+    <div class="box">Some text</div>
+    <ul>
+      <li>
+        <u>Padding</u> - reflects the area around the text displayed. note the
+        padding is transparent. our background is blue Padding is 100px for this
+        box
+      </li>
+      <br />
+      <li>
+        <u>Margin</u> - reflects the area outside the border. note that the
+        margin is transparent. margin is 70px for this box
+      </li>
+      <br />
+      <li>
+        <u>Border</u> is reflected around the padding this border is red, solid,
+        and 30px
+      </li>
+      <br />
+      <li>
+        <u>Note:</u> <strong>Width</strong> and <strong>Hieght</strong> should
+        be calculated with add padding, borders and margins
+      </li>
+    </ul>
+  </body>
+</html>
