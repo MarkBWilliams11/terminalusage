@@ -7,6 +7,9 @@
     <title>Box model</title>
   </head>
   <style>
+    .morespace{
+      margin-top:5em;
+    }
     body {
       font-size: 1.5em;
     }
@@ -18,20 +21,163 @@
 
       color: white;
     }
+    .box-shadowing {
+      background-color: green;
+      padding: 100px;
+      margin: 50px;
+      box-shadow: 10px 10px 5px grey;
+    }
+    .opacity-ex{
+      background: green;
+      padding:10px;
+      opacity: 0.5;
+    }
+    /* poistion example */
+    .relative-ex{
+      position: relative;
+      top: 10px;
+      right: 20px;
+      border: solid 2px green;
+    }
+    .absolute-ex{
+      position: absolute;
+      top: 1750px;
+      right: 50px;
+      border: solid 2px red;
+    }
+    /* fiexed example */
+    .fixed-ex{
+      position:fixed;
+top:0;
+left:0;
+background: black;
+padding: 10px;
+color: white;
+
+    }
+    /* float example */
+    .float-right{
+      float: right;
+      padding:50px;
+      border: 10px solid red;
+      width: 40%;
+
+    }
+    .float-left{
+      float: left;
+      padding:50px;
+      border: 10px solid green;
+
+    }
+    /* z-index example */
+    .z-index-ex-yellow-two{
+      position: relative;
+      top: 15px;
+      right: 10px;
+      background-color: yellow;
+      width: 50%;
+      font-size: 1.5em;
+      text-align: center;
+      z-index: 1;
+     
+      
+    }
+    .z-index-ex-red-one{
+      position: relative;
+      background-color: red;
+      width: 50%;
+      font-size: 1.5em;
+      color: white;
+      text-align: center;
+      z-index: 2;/* will sit on top of z-index: 1; */
+    
+      
+    }
+
+
+    /* navbar using hls() */
+     header {
+    background-color: hsl(180, 90%, 35%);
+    color: #FFFFFF;
+  }
+      nav {
+background-color: hsl(180, 80%, 25%);
+  }
+
+    
+  nav li {
+    display: inline;
+    margin-right: 20px;
+  }
+
+  a {
+    text-decoration: none;
+    color: inherit;
+  }
+  /* gradient color for jamaica */
+   .jamaica-colors{
+    border-radius: 20px;
+    width: 70%;
+    height: 400px;
+    margin:  50 auto;
+    background: repeating-linear-gradient(
+      45deg,
+      yellow 0px,
+      black 40px,
+      green 40px,
+     black 80px
+    );
+    color: white;
+    text-align: center;
+    font-size: 2em;
+    text-shadow: 10px 10px black;
+  }
+  /* tranform example */
+  .transform-ex{
+    position: relative;
+    left: 150px;
+    border: 2px black solid;
+    width: 10%;
+    
+  }
+  .transform-ex:hover{
+   transform: scale(2.5);
+  }
+  /* skewX eaxmple */
+  .transform-skewx-ex{
+    position: relative;
+    left: 150px;
+    border: 2px black solid;
+    width: 10%;
+    transform: skewX(20deg);
+    
+  }
+  /* skewY eaxmple */
+  .transform-skewy-ex{
+    position: relative;
+    left: 150px;
+    border: 2px black solid;
+    width: 10%;
+    transform: skewY(-20deg);
+    
+  }
+  
+
   </style>
   <body>
+    <!-- box model -->
     <h1>Box model example</h1>
     <div class="box">Some text</div>
     <ul>
       <li>
-        <u>Padding</u> - reflects the area around the text displayed. note the
-        padding is transparent. our background is blue Padding is 100px for this
-        box
+        <u>Padding</u> - reflects the area around the text displayed.
+        <u>Note:</u> the padding is transparent. our background is blue Padding
+        is 100px for this box
       </li>
       <br />
       <li>
-        <u>Margin</u> - reflects the area outside the border. note that the
-        margin is transparent. margin is 70px for this box
+        <u>Margin</u> - reflects the area outside the border. <u>Note:</u> that
+        the margin is transparent. margin is 70px for this box
       </li>
       <br />
       <li>
@@ -44,5 +190,109 @@
         be calculated with add padding, borders and margins
       </li>
     </ul>
+    <br />
+    <hr />
+    <!-- box shadowing -->
+    <h1>Box Shadowing</h1>
+    <div class="box-shadowing"></div>
+    <ul>
+      <li>
+        <u>box-shadow</u> - adds one or more shadows to an element our
+        box-shadow is 10px 10px 5px and grey
+      </li>
+      <ol>
+        <li>10px - how far to push the shadow horizontally from the element</li>
+        <li>10px - how far to push the shadow vertically from the element</li>
+        <li>5px - blur-radius and spread-radius (optional)</li>
+        <li>grey - color</li>
+      </ol>
+    </ul>
+    <br />
+    <!-- opacity -->
+    <h2>Opacity</h2>
+    <div>
+      <p>
+        Another useful CSS property is opacity. A value of 1 is opaque, which
+        isn't transparent at all. A value of 0.5 is half see-through. A value of
+        0 is completely transparent.
+      </p>
+      <span class="opacity-ex">ex: opacity: 0.5;</span>
+      <!-- position -->
+    <h2>relative</h2>
+    <div>
+      <p>
+        offsets of top or bottom, and left or right tell the browser how far to 
+        offset an item relative to where it would sit in the normal flow of the 
+        document
+      </p>
+      <span class="relative-ex">relative postion top:10px; right:20px;</span>
+    </div>
+    <h2>Absolute</h2>
+    <div>
+      <p>
+        absolute locks the element in place relative to its parent container. surrounding items ignore it.
+      </p>
+      <span class="absolute-ex">absolute postion top: 1750px; right:50px;</span>
+      <div class="fixed-ex">Element with a fixed position won't move when the user scrolls</div>
+    </div>
+    <section>
+      <h2>float</h2>
+      <div class="float-right"> Right float width 40%</div>
+      <div class="float-left"> Left float default</div>
+    </section>
+    <br>
+   
+    <section class="morespace">
+      <h2 class="morespace">z-index</h2>
+      <div class="z-index-ex-yellow-two">2</div>
+      <div class="z-index-ex-red-one">1</div>
+      
+      <p ><u>z-index</u> - property can specify the order of how elements are stacked on top of one another using
+         a whole number and not a decimal. the higher the number will determine the position from other Z-indexs'</p>
+      
+    </section>
+    <br>
+    <!-- colors -->
+    <section>
+      <h2>hsl()</h2>
+      <header>
+  <h1>Navbar</h1>
+  <nav class="navbar">
+    <ul>
+      <li><a href="#">Home</a></li>
+      <li><a href="#">Classes</a></li>
+      <li><a href="#">Contact</a></li>
+    </ul>
+  </nav>
+</header>
+
+<p>
+   the 's' and 'l' of hsl() stand for saturation and lightness, respectively. 
+  The saturation percent changes the amount of gray and the lightness percent determines 
+  how much white or black is in the color. This is useful when you have a base hue you like,
+   but need different variations of it.
+</p>
+    </section>
+    <section>
+      <div class="morespace jamaica-colors">
+Jamacia Respect!
+      </div>
+    </section>
+    <!-- Transforming -->
+    <section class=" morespace transform-ex">
+   <p >Tranform scale 2.5 on hover</p>
+   
+    </section>
+    
+    <section class="morespace transform-skewx-ex">
+   <p >Tranform skewX 20 deg along X-axis</p>
+   
+    </section>
+  
+    <section class="morespace transform-skewy-ex">
+   <p >Tranform skewY -20 deg along Y-axis</p>
+   
+    </section>
+  
   </body>
 </html>
