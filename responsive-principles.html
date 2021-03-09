@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Responsive</title>
+  </head>
+  <style>
+    .media-query-ex {
+      padding: 200px;
+      margin: 100px;
+      border: 5px solid red;
+      font-size: 1.3em;
+    }
+    /* media query example */
+    @media (max-height: 760px) {
+      .media-query-ex {
+        padding: 50px;
+        border: 2px solid green;
+      }
+    }
+    /* Resposive image */
+    img {
+      width: 800px;
+      margin: auto;
+    }
+
+    .responsive-img {
+      max-width: 100%;
+      height: auto;
+      margin: auto;
+    }
+    /* Viewport example using vmin */
+    .vmin-ex {
+      width: 50vmin;
+    }
+  </style>
+  <body>
+    <!-- example  of media query  -->
+    <h2>Using media query</h2>
+    <div class="media-query-ex">
+      760px max-height our media query changes border and padding
+    </div>
+    <section>
+      <h2>Responsive image</h2>
+      <div class="responsive-img">
+        <img src="showcasebg.jpg" alt="test image" />
+      </div>
+    </section>
+    <!-- Responsive typography -->
+    <h2>Responsive typography using viewport</h2>
+    <section>
+      <p>
+        The unoredered list below, aswell as th e paragraph have a vmin width is
+        set to 50vmin
+      </p>
+      <ul class="vmin-ex">
+        <p>
+          Viewport units are relative to the viewport dimensions (width or
+          height) of a device, and percentages are relative to the size of the
+          parent container element.
+        </p>
+        <li><u> vw( Viewport width)</u></li>
+        <li><u> vh( Viewport height)</u></li>
+        <li><u> vmin( Viewport minimum)</u></li>
+        <li><u> vmax( Viewport maximum)</u></li>
+      </ul>
+    </section>
+  </body>
+</html>
