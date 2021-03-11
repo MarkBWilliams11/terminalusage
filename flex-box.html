@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Flex-Box</title>
+  </head>
+  <style>
+    .display-flex-ex {
+      height: 500px;
+      /* they end up sitting side by side */
+      display: flex;
+    }
+    #box-1 {
+      background-color: blue;
+      width: 50%;
+      height: 50%;
+    }
+    #box-2 {
+      background-color: purple;
+      width: 50%;
+      height: 50%;
+    }
+
+    /* tweet style using flexbox */
+    .profile-section {
+      display: flex;
+    }
+    .profile-section .profile-thumbnail {
+      width: 50px;
+      height: 50px;
+      border-radius: 4px;
+    }
+    .profile-section .profile-name {
+      display: flex;
+      flex-direction: column;
+
+      margin-left: 10px;
+    }
+    .profile-section .follow-btn {
+      display: flex;
+
+      margin: 0 0 0 auto;
+    }
+    .profile-section .follow-btn button {
+      border: 0;
+      border-radius: 3px;
+      padding: 5px;
+    }
+    .profile-section h3,
+    .profile-section h4 {
+      display: flex;
+      margin: 0%;
+    }
+    #inner p {
+      margin-bottom: 10px;
+      font-size: 20px;
+    }
+    #inner hr {
+      margin: 20px 0;
+      border-style: solid;
+      opacity: 0.1;
+    }
+    .profile-status {
+      display: flex;
+    }
+    .profile-status .stats {
+      display: flex;
+      font-size: 15px;
+    }
+    .profile-status .stats strong {
+      font-size: 18px;
+    }
+    .profile-status .stats .likes {
+      margin-left: 10px;
+    }
+    .profile-status .cta {
+      margin-left: auto;
+    }
+    .profile-status .cta button {
+      border: 0;
+      background: transparent;
+    }
+    /* using flex-direction */
+    .flex-direction-ex {
+      height: 500px;
+      display: flex;
+      flex-direction: row-reverse;
+    }
+    .flex-direction-ex-column {
+      height: 500px;
+      display: flex;
+      flex-direction: column;
+    }
+    /* Justify conent style example  */
+    .justify-content-ex {
+      background: grey;
+      height: 500px;
+      display: flex;
+      justify-content: center;
+    }
+    #jcbox-1 {
+      background-color: green;
+      width: 25%;
+      height: 100%;
+    }
+    #jcbox-2 {
+      background-color: purple;
+      width: 25%;
+      height: 100%;
+    }
+  </style>
+  <body>
+    <!-- Display flex property -->
+    <h2>using display:flex property</h2>
+    <section class="display-flex-ex">
+      <div id="box-1"></div>
+      <div id="box-2"></div>
+    </section>
+    <hr />
+
+    <!-- Recreation of a tweet -->
+    <section class="profile-section">
+      <img
+        src="https://freecodecamp.s3.amazonaws.com/quincy-twitter-photo.jpg"
+        alt="Quincy Larson's profile picture"
+        class="profile-thumbnail"
+      />
+      <div class="profile-name">
+        <h3>Quincy Larson</h3>
+        <h4>@ossia</h4>
+      </div>
+      <div class="follow-btn">
+        <button>Follow</button>
+      </div>
+    </section>
+    <!-- tweet article section -->
+    <article>
+      <div id="inner">
+        <p>
+          I meet so many people who are in search of that one trick that will
+          help them work smart. Even if you work smart, you still have to work
+          hard.
+        </p>
+        <span class="date">1:32 PM - 12 Jan 2018</span>
+        <hr />
+      </div>
+    </article>
+    <!-- tweet status section -->
+    <section class="profile-status">
+      <div class="stats">
+        <div class="Retweets"><strong>107</strong> Retweets</div>
+        <div class="likes"><strong>431</strong> Likes</div>
+      </div>
+      <div class="cta">
+        <button class="share-btn">Share</button>
+        <button class="retweet-btn">Retweet</button>
+        <button class="like-btn">Like</button>
+      </div>
+    </section>
+    <br />
+
+    <!-- Using flex-direction combinded with display flex we can make row and colmuns -->
+    <h2>Using display flex combined with flex direction row-reverse</h2>
+    <section class="flex-direction-ex">
+      <div id="box-1"></div>
+      <div id="box-2"></div>
+    </section>
+    <!-- Using flex-direction combinded with display flex we can make row and colmuns -->
+    <h2>Using display flex combined with flex direction column</h2>
+    <section class="flex-direction-ex-column">
+      <div id="box-1"></div>
+      <div id="box-2"></div>
+    </section>
+    <!-- Justify-content -->
+    <h2>using Justify-content property</h2>
+    <p>This property has many options to space out the flex items</p>
+    <ul>
+      <li>
+        <u>flex-start</u> -aligns items to the start of the flex container. For
+        a row, this pushes the items to the left of the container. For a column,
+        this pushes the items to the top of the container. This is the default
+        alignment if no justify-content is specified.
+      </li>
+      <li>
+        <u>flex-end</u> -aligns items to the end of the flex container. For a
+        row, this pushes the items to the right of the container. For a column,
+        this pushes the items to the bottom of the container.
+      </li>
+      <li>
+        <u>space-between</u> -aligns items to the center of the main axis, with
+        extra space placed between the items. The first and last items are
+        pushed to the very edge of the flex container.
+      </li>
+      <li>
+        <u>space-around</u> -the first and last items are not locked to the
+        edges of the container, the space is distributed around all the items
+        with a half space on either end of the flex container.
+      </li>
+      <li>
+        <u>space-evenly</u> -Distributes space evenly between the flex items
+        with a full space at either end of the flex container
+      </li>
+    </ul>
+    <section class="justify-content-ex">
+      <div id="jcbox-1"></div>
+      <div id="jcbox-2"></div>
+    </section>
+    <!-- alignment -->
+  </body>
+</html>
