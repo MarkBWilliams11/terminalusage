@@ -7,6 +7,9 @@
     <title>Flex-Box</title>
   </head>
   <style>
+    body p {
+       font-size: 1.5em;
+    }
     .display-flex-ex {
       height: 500px;
       /* they end up sitting side by side */
@@ -110,10 +113,192 @@
       width: 25%;
       height: 100%;
     }
+    /* align items style example  */
+    .align-items-ex {
+      background: grey;
+      height: 500px;
+      display: flex;
+      align-items: center;
+    }
+    #albox-1 {
+      background-color: yellow;
+      width: 25%;
+      height: 50%;
+    }
+    #albox-2 {
+      background-color: orange;
+      width: 25%;
+      height: 50%;
+    }
+    /* felx-wrap style example  */
+    .flex-wrap-ex {
+      background: grey;
+      height: 500px;
+      display: flex;
+      flex-wrap: wrap;
+    }
+    #fwbox-1 {
+      background-color: blue;
+      width: 50%;
+      height: 50%;
+    }
+    #fwbox-2 {
+      background-color: darkolivegreen;
+      width: 25%;
+      height: 50%;
+    }
+    #fwbox-3 {
+      background-color: purple;
+      width: 50%;
+      height: 50%;
+    }
+      /*flex-shrink style example  */
+    .flex-shrink-ex {
+      background: grey;
+      height: 500px;
+      display: flex;
+   
+    }
+    #fsbox-1 {
+      background-color: yellow;
+      width: 100%;
+      height: 50%;
+      flex-shrink: 1;
+    }
+    #fsbox-2 {
+      background-color: orange;
+      width: 100%;
+      height: 50%;
+      flex-shrink: 3;
+    }
+      /*flex-grow style example  */
+    .flex-grow-ex {
+      background: grey;
+      height: 500px;
+      display: flex;
+   
+    }
+    #fgbox-1 {
+      background-color: red;
+     
+      height: 50%;
+      flex-grow: 2;
+    }
+    #fgbox-2 {
+      background-color: greenyellow;
+      
+      height: 50%;
+      flex-grow: 1;
+    }
+      /*flex-basis style example  */
+    .flex-basis-ex {
+      background: grey;
+      height: 500px;
+      display: flex;
+   
+    }
+    #fbasisbox-1 {
+      background-color: green;
+     
+      height: 100%;
+      flex-basis: 5em;
+    }
+    #fbasisbox-2 {
+      background-color: orangered;
+      
+      height: 100%;
+      flex-basis: 20em;
+    }
+      /*flex shorthanded  style example  */
+    .flex-shorthand-ex {
+      background: grey;
+      height: 500px;
+      display: flex;
+   
+    }
+    #fshortbox-1 {
+      background-color: red;
+      height: 100%;
+flex: 1 1 300px;
+      
+    }
+    #fshortbox-2 {
+      background-color: yellow;
+      height: 100%;
+      flex: 2 2 50px;
+      
+    }
+      /*flex order style example  */
+    .flex-order-ex {
+      background: grey;
+      height: 500px;
+      display: flex;
+      justify-content: center;
+      text-align: center;
+      
+   
+    }
+    #forderbox-1 {
+      background-color: purple;
+      height: 100%;
+      width: 100%;
+      order: 2;
+      color: white;
+      font-size: 5em;
+      
+      
+      
+
+      
+    }
+    #forderbox-2 {
+      background-color: green;
+      height: 100%;
+      width: 100%;
+      order: 1;
+      color: white;
+      font-size: 5em;
+   
+     
+      
+      
+    }
+      /*flex align-self style example  */
+    .flex-align-self-ex {
+      background: grey;
+      height: 500px;
+      display: flex;
+      
+     
+      
+   
+    }
+    #fselfbox-1 {
+      background-color: blue;
+      height: 50%;
+      width: 25%;
+      align-self: center;
+    
+      
+      
+      
+
+      
+    }
+    #fselfbox-2 {
+      background-color: turquoise;
+      height: 50%;
+      width: 25%;
+      align-self: flex-end;
+     
+     
+      
+      
+    }
   </style>
   <body>
     <!-- Display flex property -->
-    <h2>using display:flex property</h2>
+    <h2>using display:flex property ( a property for flex container)</h2>
     <section class="display-flex-ex">
       <div id="box-1"></div>
       <div id="box-2"></div>
@@ -162,20 +347,24 @@
     <br />
 
     <!-- Using flex-direction combinded with display flex we can make row and colmuns -->
-    <h2>Using display flex combined with flex direction row-reverse</h2>
+    <h2>Using display flex combined with flex direction row-reverse ( a property for flex container)</h2>
     <section class="flex-direction-ex">
       <div id="box-1"></div>
       <div id="box-2"></div>
     </section>
     <!-- Using flex-direction combinded with display flex we can make row and colmuns -->
-    <h2>Using display flex combined with flex direction column</h2>
+    <h2>Using display flex combined with flex direction column ( a property for flex container)</h2>
     <section class="flex-direction-ex-column">
       <div id="box-1"></div>
       <div id="box-2"></div>
     </section>
     <!-- Justify-content -->
-    <h2>using Justify-content property</h2>
-    <p>This property has many options to space out the flex items</p>
+    <h2>using Justify-content property ( a property for flex container)</h2>
+    <p>
+      The direction the flex items are arranged is called the main axis. For a
+      row, this is a horizontal line that cuts through each item. And for a
+      column, the main axis is a vertical line through the items.
+    </p>
     <ul>
       <li>
         <u>flex-start</u> -aligns items to the start of the flex container. For
@@ -208,5 +397,134 @@
       <div id="jcbox-2"></div>
     </section>
     <!-- alignment -->
+    <section>
+      <h2>using align-items property ( a property for flex container)</h2>
+      <p>
+        Flex containers also have a cross axis which is the opposite of the main
+        axis. For rows, the cross axis is vertical and for columns, the cross
+        axis is horizontal.
+      </p>
+      <ul>
+        <li>
+          <u>flex-start</u>- align items to the start of the flex container.for
+          rows, this aligns items to the top of the container.for columns, this
+          aligns items to the left of the container
+        </li>
+        <li>
+          <u>flex-end</u>- aligns itens to the end of the flex container. for
+          rows, this aligns items to the bottom of the flex container. for
+          columns, this aligns to the right of the container.
+        </li>
+        <li>
+          <u>Center</u>- align items to the center. for rows, this vertically
+          aligns itens (equal space above and below the items ). For columns,
+          this horizontally aligns them ( equal space to the keft and right of
+          the items)
+        </li>
+        <li>
+          <u>stretch</u>- stretch the items to fill the flex container. For
+          example, row items are stretched to fill the flex container
+          top=to-bottom.This is the deaufault value if no align-items value is
+          specified.
+        </li>
+        <li>
+          <u>baseline</u>- align items to their baseline is a text concept,
+          think of it as the line the letter sits on.
+        </li>
+      </ul>
+      <section class="align-items-ex">
+        <div id="albox-1">Hello</div>
+        <div id="albox-2">World</div>
+      </section>
+    </section>
+    <!-- flex wrap  -->
+    <section>
+      <h2>using flex wrap ( a property for flex container)</h2>
+      <p>
+        items will move into a new row or column,depending on the size of the
+        container.
+      </p>
+      <li><u>no-wrap</u>- this is the default</li>
+      <li>
+        <u>wrap</u>- wraps items into multiple lines from top-to-bottom if they
+        are in rows, and left to right for colums.
+      </li>
+      <li>
+        <u>wrap-reverse</u>- wraps items onto multiple lines from bottom to top
+        if they are in columns
+      </li>
+        <section class="flex-wrap-ex">
+        <div id="fwbox-1"></div>
+        <div id="fwbox-2"></div>
+        <div id="fwbox-3"></div>
+      </section>
+    </section>
+    </section>
+    <!-- flex shrink  note: this pertains to the flex item ..also width 100% -->
+    <section>
+      <h2>using flex shrink ( a property for flex items) </h2>
+      <p>this will shrink an item. thie flex shrink property will use number values. 
+        if one item have a value of 1 and another item have a value of 3. 
+        the item will shrink 3x smaller than the parent container</p>
+         <section class="flex-shrink-ex">
+        <div id="fsbox-1">Hello</div>
+        <div id="fsbox-2">World</div>
+      </section>
+    </section>
+
+    <!-- flex grow  note: this pertains to the flex item ...also no wdith included-->
+    <section>
+      <h2>using flex grow( a property for flex items) </h2>
+      <p>this will grow an item. the flex grow property will use number values. 
+        if one item have a value of 1 and another item have a value of 3. 
+        the item will grow 3x smaller than the parent container</p>
+         <section class="flex-grow-ex">
+        <div id="fgbox-1">Hello</div>
+        <div id="fgbox-2">World</div>
+      </section>
+    </section>
+    
+    <!-- flex basis  note: this pertains to the flex item ...also no wdith included on css-->
+    <section>
+      <h2>using flex basis( a property for flex items) </h2>
+      <p>specifies the initial size of the item before CSS makes adjustments with flex-shrink or flex-grow. size properties (px, em, %, etc.)</p>
+         <section class="flex-basis-ex">
+        <div id="fbasisbox-1">Hello</div>
+        <div id="fbasisbox-2">World</div>
+      </section>
+    </section>
+    <!-- shorthand  note: this pertains to the flex item ...also no wdith included on css-->
+    <section>
+      <h2>using shorthand ( a property for flex items) </h2>
+      <p>using shorthand to combine flex-grow,flex-shrink,and flex-basis</p>
+      <ul><li>
+        example: flex: 0 1 auto; (this is the default) (grow,shrink,basis)
+      </li></ul>
+         <section class="flex-shorthand-ex">
+        <div id="fshortbox-1">Hello</div>
+        <div id="fshortbox-2">World</div>
+      </section>
+    </section>
+    <!-- reorder   note: this pertains to the flex item -->
+    <section>
+      <h2>using order ( a property for flex items) </h2>
+      <p>the order of how flex items appear in the flex container.</p>
+      
+         <section class="flex-order-ex">
+        <div id="forderbox-1">1</div>
+        <div id="forderbox-2">2</div>
+      </section>
+    </section>
+    <!-- reorder   note: this pertains to the flex item -->
+    <section>
+      <h2>using align-self property ( a property for flex items) </h2>
+      <p>This property allows you to adjust each item's alignment individually</p>
+      
+         <section class="flex-align-self-ex">
+        <div id="fselfbox-1">box 1</div>
+        <div id="fselfbox-2">Box 2</div>
+      </section>
+    </section>
+
   </body>
 </html>
