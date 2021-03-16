@@ -1,0 +1,638 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CSS GRID container properties</title>
+  </head>
+  <style>
+    /* grid template columns example style */
+    .containergtc {
+      font-size: 1.5em;
+      background: grey;
+      display: grid;
+      grid-template-columns: 25% 50%;
+    }
+    .bx1gtc {
+      background: blue;
+    }
+    .bx2gtc {
+      background: orangered;
+    }
+    .bx3gtc {
+      background: yellow;
+    }
+    .bx4gtc {
+      background: red;
+    }
+    /* grid template row example style */
+    .containergtr {
+      font-size: 1.5em;
+      background: grey;
+      display: grid;
+      grid-template-rows: 10% 60% 30%;
+    }
+    .bx1gtr {
+      background: blue;
+    }
+    .bx2gtr {
+      background: orangered;
+    }
+    .bx3gtr {
+      background: yellow;
+    }
+    .bx4gtr {
+      background: red;
+    }
+    /* grid column gap example style */
+    .containergap {
+      font-size: 1.5em;
+      background: grey;
+      display: grid;
+      grid-template-columns: 1fr 2fr 1fr;
+      grid-column-gap: 10px;
+    }
+    .bx1gap {
+      background: blue;
+    }
+    .bx2gap {
+      background: orangered;
+    }
+    .bx3gap {
+      background: yellow;
+    }
+    .bx4gap {
+      background: red;
+    }
+    /* grid row gap example style */
+    .containerrowgap {
+      font-size: 1.5em;
+      background: grey;
+      display: grid;
+      grid-template-columns: 1fr 2fr 1fr;
+      grid-row-gap: 30px;
+    }
+    .bx1rowgap {
+      background: blue;
+    }
+    .bx2rowgap {
+      background: orangered;
+    }
+    .bx3rowgap {
+      background: yellow;
+    }
+    .bx4rowgap {
+      background: red;
+    }
+    /* grid gap shorthand example style */
+    .containergg {
+      font-size: 1.5em;
+      background: grey;
+      display: grid;
+      grid-template-columns: 1fr 2fr 1fr;
+      grid-gap: 30px 30px;
+    }
+    .bx1gg {
+      background: blue;
+    }
+    .bx2gg {
+      background: orangered;
+    }
+    .bx3gg {
+      background: yellow;
+    }
+    .bx4gg {
+      background: red;
+    }
+    /* grid columnn example style */
+    .containergc {
+      font-size: 1.5em;
+      background: grey;
+      display: grid;
+      grid-template-columns: 1fr 2fr 1fr;
+      grid-gap: 30px 30px;
+    }
+    .bx1gc {
+      background: blue;
+    }
+    .bx2gc {
+      background: orangered;
+    }
+    .bx3gc {
+      background: yellow;
+      grid-column: 1/4;
+    }
+    /* grid row example style */
+    .containergr {
+      font-size: 1.5em;
+      background: grey;
+      display: grid;
+      grid-template-columns: 1fr 2fr 1fr;
+      grid-gap: 30px 30px;
+    }
+    .bx1gr {
+      background: blue;
+    }
+    .bx2gr {
+      background: orangered;
+    }
+    .bx3gr {
+      background: yellow;
+
+      grid-row: 2/9;
+    }
+    /* Justify-self example style */
+    .containerjs {
+      font-size: 1.5em;
+      background: grey;
+      display: grid;
+      grid-template-columns: 1fr 2fr 1fr;
+      grid-gap: 30px 30px;
+      min-height: 200px;
+    }
+    .bx1js {
+      background: blue;
+    }
+    .bx2js {
+      background: orangered;
+      justify-self: start;
+    }
+    .bx3js {
+      background: yellow;
+    }
+    /* align-self example style */
+    .containeras {
+      font-size: 1.5em;
+      background: grey;
+      display: grid;
+      grid-template-columns: 1fr 2fr 1fr;
+      grid-gap: 30px 30px;
+      min-height: 200px;
+    }
+    .bx1as {
+      background: blue;
+    }
+    .bx2as {
+      background: orangered;
+      align-self: end;
+    }
+    .bx3as {
+      background: yellow;
+    }
+    /* justify-items example style */
+    .containerji {
+      font-size: 1.5em;
+      background: grey;
+      display: grid;
+      grid-template-columns: 1fr 2fr 1fr;
+      grid-gap: 30px 30px;
+      min-height: 200px;
+      justify-items: start;
+    }
+    .bx1ji {
+      background: blue;
+    }
+    .bx2ji {
+      background: orangered;
+    }
+    .bx3ji {
+      background: yellow;
+    }
+    /* align-items example style */
+    .containerai {
+      font-size: 1.5em;
+      background: grey;
+      display: grid;
+      grid-template-columns: 1fr 2fr 1fr;
+      grid-gap: 30px 30px;
+      min-height: 200px;
+      align-items: center;
+    }
+    .bx1ai {
+      background: blue;
+    }
+    .bx2ai {
+      background: orangered;
+    }
+    .bx3ai {
+      background: yellow;
+    }
+    /* grid template area example style (also uing grid area to place ) */
+    .containergta {
+      font-size: 1.5em;
+      background: grey;
+      display: grid;
+      grid-template-columns: 1fr 2fr 1fr;
+      grid-gap: 30px 30px;
+      min-height: 200px;
+      align-items: center;
+      grid-template-areas:
+        "grida1 grida1 grida1"
+        "grida2 grida3 grida4"
+        "grida5 grida5 grida5";
+    }
+    .bx1gta {
+      background: blue;
+      grid-area: grida5;
+    }
+    .bx2gta {
+      background: orangered;
+      grid-area: grida1;
+    }
+    .bx3gta {
+      background: yellow;
+    }
+    .bx4gta {
+      background: purple;
+      grid-area: grida4;
+    }
+    .bx5gta {
+      background: rgb(192, 246, 255);
+    }
+    /* minmax function */
+    .containerminmax {
+      font-size: 1.5em;
+      background: grey;
+      display: grid;
+      grid-template-columns: repeat(3, minmax(50px, 600px));
+      grid-gap: 30px 30px;
+      min-height: 200px;
+      align-items: center;
+    }
+    .bx1mm {
+      background: blue;
+    }
+    .bx2mm {
+      background: orangered;
+    }
+    .bx3mm {
+      background: yellow;
+    }
+    .bx4mm {
+      background: purple;
+    }
+    .bx5mm {
+      background: rgb(192, 246, 255);
+    }
+    /* auto fill option function */
+    .containerafill {
+      font-size: 1.5em;
+      background: grey;
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(50px, 1fr));
+      grid-gap: 30px 30px;
+      min-height: 200px;
+      align-items: center;
+    }
+    .bx1afill {
+      background: blue;
+    }
+    .bx2afill {
+      background: orangered;
+    }
+    .bx3afill {
+      background: yellow;
+    }
+    .bx4afill {
+      background: purple;
+    }
+    .bx5afill {
+      background: rgb(192, 246, 255);
+    }
+    /* auto fit option function */
+    .containerafit {
+      font-size: 1.5em;
+      background: grey;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(50px, 1fr));
+      grid-gap: 30px 30px;
+      min-height: 200px;
+      align-items: center;
+    }
+    .bx1afit {
+      background: blue;
+    }
+    .bx2afit {
+      background: orangered;
+    }
+    .bx3afit {
+      background: yellow;
+    }
+    .bx4afit {
+      background: purple;
+    }
+    .bx5afit {
+      background: rgb(192, 246, 255);
+    }
+  </style>
+  <body>
+    <!-- intro to CSS Grid -->
+    <section>
+      <h2>Using display grid property (container property *parent)</h2>
+      <p>
+        when we set the property to display:grid; this will allow us to use the
+        other grid proerty. The parent element is usally referred to as the
+        container and its children are called items.
+      </p>
+    </section>
+
+    <!--  grid-template-columns -->
+    <section>
+      <h2>Using grid-template-columns property (container property *parent)</h2>
+      <p>
+        adds columns to the grid.number of parameters given to the
+        grid-template-columns property indicates the number of columns in the
+        grid, and the value of each parameter indicates the width of each
+        column.
+      </p>
+      <section>
+        <div class="containergtc">
+          <div class="bx1gtc">1</div>
+          <div class="bx2gtc">2</div>
+          <div class="bx3gtc">3</div>
+          <div class="bx4gtc">4</div>
+        </div>
+      </section>
+    </section>
+    <!--  grid-template-rows -->
+    <section>
+      <h2>Using grid-template-rows property (container property *parent)</h2>
+      <p>
+        adds rows to the grid.number of parameters given to the
+        grid-template-rows property indicates the number of rows in the grid,
+        and the value of each parameter indicates the width of each row.
+      </p>
+      <section>
+        <div class="containergtr">
+          <div class="bx1gtr">1</div>
+          <div class="bx2gtr">2</div>
+          <div class="bx3gtr">3</div>
+          <div class="bx4gtr">4</div>
+        </div>
+      </section>
+    </section>
+    <!-- units of measure -->
+    <br />
+    <section>
+      <h2>Other measurements to use</h2>
+      <p>
+        You can use absolute and relative units like px and em in CSS Grid to
+        define the size of rows and columns.
+      </p>
+      <ul>
+        <li>fr: sets the column or row to a fraction of the available space</li>
+        <li>
+          auto: sets the column or row to the width or height of its content
+          automatically
+        </li>
+        <li>
+          %: adjusts the column or row to the percent width of its container
+        </li>
+      </ul>
+    </section>
+    <!--  grid-column-gap -->
+    <section>
+      <h2>Using grid-column-gap property (container property *parent)</h2>
+      <p>allows for a gap between columns in the grid</p>
+      <section>
+        <div class="containergap">
+          <div class="bx1gap">1</div>
+          <div class="bx2gap">2</div>
+          <div class="bx3gap">3</div>
+          <div class="bx4gap">4</div>
+        </div>
+      </section>
+    </section>
+    <!--  grid-row-gap -->
+    <section>
+      <h2>Using grid-row-gap property (container property *parent)</h2>
+      <p>allows for a gap between rows in the grid</p>
+      <section>
+        <div class="containerrowgap">
+          <div class="bx1rowgap">1</div>
+          <div class="bx2rowgap">2</div>
+          <div class="bx3rowgap">3</div>
+          <div class="bx4rowgap">4</div>
+        </div>
+      </section>
+    </section>
+    <!-- grid-gap Shorthand for grid-row-gap and grid-column-gap  -->
+    <section>
+      <h2>Using grid-gap property (container property *parent)</h2>
+      <p>is a shorthand property for grid-row-gap and grid-column-gap</p>
+      <ul>
+        <li>grid-gap: row value, column value;</li>
+      </ul>
+      <section>
+        <div class="containergg">
+          <div class="bx1gg">1</div>
+          <div class="bx2gg">2</div>
+          <div class="bx3gg">3</div>
+          <div class="bx4gg">4</div>
+        </div>
+      </section>
+    </section>
+    <!--grid-clomun  -->
+    <section>
+      <h2>Using grid-column property (item property *child )</h2>
+      <p>
+        depending on the number of columns given. The values of the columns will
+        determine where the span of the items value.
+      </p>
+      <ul>
+        <p>
+          this example with will have box number 3 span across entire contianer.
+          assuming we have 4 lines we said start at line 1 (start from the left)
+          and end on line 4
+        </p>
+        <li>ex: grid-column: 1/4 ;</li>
+      </ul>
+      <section>
+        <div class="containergc">
+          <div class="bx1gc">1</div>
+          <div class="bx2gc">2</div>
+          <div class="bx3gc">3</div>
+        </div>
+      </section>
+    </section>
+    <!--grid-row  -->
+    <section>
+      <h2>Using grid-row property (item property *child )</h2>
+      <p>
+        depending on the number of rows given. The values of the rows will
+        determine where the span of the items value.
+      </p>
+      <ul>
+        <p>
+          this example with will have box number 3 spans a value of 9 start from
+          a row value of 2.
+        </p>
+        <li>ex: grid-row: 2/9 ;</li>
+      </ul>
+      <section>
+        <div class="containergr">
+          <div class="bx1gr">1</div>
+          <div class="bx2gr">2</div>
+          <div class="bx3gr">3</div>
+        </div>
+      </section>
+    </section>
+    <!--Justify-self  -->
+    <section>
+      <h2>Using justify-self property (item property *child *Horizantal )</h2>
+      <p>align the content's position within its cell horizontally</p>
+      <ul>
+        <p>Some other values other than the default stretch property:</p>
+        <li><u>start</u>- Aligns the content at the left of the cell</li>
+        <li><u>center</u>- Aligns the cotennt in the middle of the cell</li>
+        <li><u>end</u>- Aligns the content at the right of the cell</li>
+      </ul>
+      <section>
+        <div class="containerjs">
+          <div class="bx1js">1</div>
+          <div class="bx2js">2</div>
+          <div class="bx3js">3</div>
+        </div>
+      </section>
+    </section>
+    <!--align-self  -->
+    <section>
+      <h2>Using justify-self property (item property *child *Vertical )</h2>
+      <p>align the content's position within its cell vertically</p>
+      <ul>
+        <li><u>start</u>- Aligns the content at the left of the cell</li>
+        <li><u>center</u>- Aligns the cotennt in the middle of the cell</li>
+        <li><u>end</u>- Aligns the content at the right of the cell</li>
+      </ul>
+      <section>
+        <div class="containeras">
+          <div class="bx1as">1</div>
+          <div class="bx2as">2</div>
+          <div class="bx3as">3</div>
+        </div>
+      </section>
+    </section>
+    <!--justify-items  -->
+    <section>
+      <h2>Using justify-items property (item property *child *Horizontal )</h2>
+      <p>aligns all items position within its cell horizontally</p>
+
+      <section>
+        <div class="containerji">
+          <div class="bx1ji">1</div>
+          <div class="bx2ji">2</div>
+          <div class="bx3ji">3</div>
+        </div>
+      </section>
+    </section>
+    <!--align-items  -->
+    <section>
+      <h2>Using align-items property (item property *child *vertical )</h2>
+      <p>aligns all items position within its cell vertically</p>
+
+      <section>
+        <div class="containerai">
+          <div class="bx1ai">1</div>
+          <div class="bx2ai">2</div>
+          <div class="bx3ai">3</div>
+        </div>
+      </section>
+    </section>
+    <!--grid template area  -->
+    <section>
+      <h2>Using grid template area property (item property *child )</h2>
+      <p>
+        Group cells of the grid together into an area and give the area a custom
+        name. <br />
+        ***Note: Every word in the code represents a cell and every pair of
+        quotation marks represent a row. In addition to custom labels, you can
+        use a period (.) to designate an empty cell in the grid.***
+      </p>
+      <br />
+      <h2>using grid are with grid template area</h2>
+      <p>Using the custom name given to place items in the selected area</p>
+
+      <section>
+        <div class="containergta">
+          <div class="bx1gta">1</div>
+          <div class="bx2gta">2</div>
+          <div class="bx3gta">3</div>
+          <div class="bx4gta">4</div>
+          <div class="bx5gta">5</div>
+        </div>
+      </section>
+    </section>
+    <!-- repeat funcition  -->
+    <section>
+      <h2>Using the repeat function</h2>
+      <p>
+        Using the repeat function allows us to repeat a number of columns or
+        rows specifiedand its value.
+      </p>
+      <ul>
+        <li>example: grid-template-row: repeat(50, 6fr);</li>
+      </ul>
+    </section>
+    <!-- minmax funcition  -->
+    <section>
+      <h2>Using the minmax function</h2>
+      <p>used to set values to change the container size.</p>
+      <ul>
+        <li>grid-template-columns: repeat(3, minmax(50px, 600px));</li>
+      </ul>
+      <ol>
+        <li>repeat 3 times</li>
+        <li>min width 50px</li>
+        <li>max width 600px</li>
+      </ol>
+      <section>
+        <div class="containerminmax">
+          <div class="bx1mm">1</div>
+          <div class="bx2mm">2</div>
+          <div class="bx3mm">3</div>
+          <div class="bx4mm">4</div>
+          <div class="bx5mm">5</div>
+        </div>
+      </section>
+    </section>
+    <!-- auto-fill  -->
+    <section>
+      <h2>Using auto fill option for repeat</h2>
+      <p>
+        Depending on the measurements of the container. auto fill will
+        automatically resize to fill container. ***Note: container can't fit all
+        items on one row, it will move them down to a new one.
+      </p>
+
+      <section>
+        <div class="containerafill">
+          <div class="bx1afill">1</div>
+          <div class="bx2afill">2</div>
+          <div class="bx3afill">3</div>
+          <div class="bx4afill">4</div>
+          <div class="bx5afill">5</div>
+        </div>
+      </section>
+    </section>
+    <!-- auto-fit  -->
+    <section>
+      <h2>Using auto fit option for repeat</h2>
+      <p>
+        auto-fill keeps inserting empty rows or columns and pushes your items to
+        the side, while auto-fit collapses those empty rows or columns and
+        stretches your items to fit the size of the container.
+      </p>
+
+      <section>
+        <div class="containerafit">
+          <div class="bx1afit">1</div>
+          <div class="bx2afit">2</div>
+          <div class="bx3afit">3</div>
+          <div class="bx4afit">4</div>
+          <div class="bx5afit">5</div>
+        </div>
+      </section>
+    </section>
+  </body>
+</html>

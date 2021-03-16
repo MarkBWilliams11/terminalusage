@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Responsive grid layout</title>
+  </head>
+  <style>
+    /* out container */
+    .responsive-layout {
+      background-color: silver;
+      color: white;
+      font-size: 2em;
+      text-align: center;
+      min-height: 500px;
+      width: 100%;
+      /* make grid */
+      display: grid;
+      /* column */
+      grid-template-columns: 1fr;
+      /* row */
+      grid-template-rows: 1fr auto auto 1fr;
+      grid-gap: 10px;
+      /* grid area */
+      grid-template-areas:
+        "header"
+        "ad"
+        "content1"
+        "content2"
+        "footer";
+    }
+    /* out items */
+    .bx1 {
+      background-color: purple;
+      /* declare area on the grid */
+      grid-area: header;
+    }
+    .bx2 {
+      background-color: red;
+      grid-area: ad;
+    }
+    .bx3 {
+      background-color: saddlebrown;
+      grid-area: content1;
+    }
+    /* holds article classes */
+    .bx4 {
+      background-color: salmon;
+      grid-area: content2;
+      display: grid;
+      grid-template-columns: 1fr 2fr;
+    }
+    .bx5 {
+      background-color: seagreen;
+      grid-area: footer;
+    }
+    /* article classes within class bx4 */
+    .articleOne {
+      background-color: blue;
+    }
+    .articleTwo {
+      background-color: rgb(184, 29, 158);
+    }
+    /* using media queries to make grid responsive */
+    @media (min-width: 400px) {
+      .responsive-layout {
+        grid-template-columns: auto 1fr;
+        grid-template-rows: 1fr auto auto 1fr;
+        /* grid area */
+        grid-template-areas:
+          "ad header"
+          "ad . "
+          "ad content1"
+          "ad content2"
+          "ad footer";
+      }
+    }
+    @media (min-width: 600px) {
+      .responsive-layout {
+        grid-template-columns: auto 1fr;
+
+        /* grid area */
+        grid-template-areas:
+          "header header"
+          "ad . "
+          "ad content1"
+          "ad content2"
+          "footer footer";
+      }
+    }
+  </style>
+  <body>
+    <section>
+      <h2>Responsive layout</h2>
+      <p>using our combined knowledge we can create a basic layout</p>
+      <section>
+        <div class="responsive-layout">
+          <div class="bx1">Header</div>
+          <div class="bx2">AD</div>
+          <div class="bx3">Content 1</div>
+          <div class="bx4">
+            Content 2
+            <article class="articleOne">article 1</article>
+            <article class="articleTwo">article 2</article>
+          </div>
+          <div class="bx5">Footer</div>
+        </div>
+      </section>
+    </section>
+  </body>
+</html>
